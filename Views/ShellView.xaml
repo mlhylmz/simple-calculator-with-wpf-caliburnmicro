@@ -1,0 +1,99 @@
+﻿<Window x:Class="CMCalcculator.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CMCalcculator.Views"
+        mc:Ignorable="d"
+        Title="ShellView" Height="500" Width="430">
+    <Grid Background="#023047">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <!-- OPERATIONS -->
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" x:Name="ResultTextBlock" Text="{Binding Result}"
+                       Style="{StaticResource ResultTextBlock}"/>
+            <TextBlock Grid.Row="1" x:Name="InputTextBlock" Text="{Binding Input}" 
+                       Style="{StaticResource InputTextBlock}"/>
+
+        </Grid>
+
+        <!-- BUTTONS -->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+
+            <!-- NUMBERS -->
+            <Button Grid.Row="0" Grid.Column="0" 
+                    x:Name="One"
+                    Content="1" Style="{StaticResource NumberButtonStyle}"/>
+            <Button Grid.Row="0" Grid.Column="1" 
+                    x:Name="Two"
+                    Content="2" Style="{StaticResource NumberButtonStyle}"/>
+            <Button Grid.Row="0" Grid.Column="2" 
+                    x:Name="Three"
+                    Content="3" Style="{StaticResource NumberButtonStyle}" />
+            <Button Grid.Row="1" Grid.Column="0" 
+                    x:Name="Four"
+                    Content="4" Style="{StaticResource NumberButtonStyle}" />
+            <Button Grid.Row="1" Grid.Column="1" 
+                    x:Name="Five"
+                    Content="5" Style="{StaticResource NumberButtonStyle}" />
+            <Button Grid.Row="1" Grid.Column="2" 
+                    x:Name="Six"
+                    Content="6" Style="{StaticResource NumberButtonStyle}" />
+            <Button Grid.Row="2" Grid.Column="0" 
+                    x:Name="Seven"
+                    Content="7" Style="{StaticResource NumberButtonStyle}" />
+            <Button Grid.Row="2" Grid.Column="1" 
+                    x:Name="Eight"
+                    Content="8" Style="{StaticResource NumberButtonStyle}" />
+            <Button Grid.Row="2" Grid.Column="2" 
+                    x:Name="Nine"
+                    Content="9" Style="{StaticResource NumberButtonStyle}" />
+            <Button Grid.Row="3" Grid.Column="1" 
+                    x:Name="Zero"
+                    Content="0" Style="{StaticResource NumberButtonStyle}" />
+
+            <!-- OPERATIONS -->
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="3" Grid.RowSpan="2">
+                <Button Content="+" x:Name="sumButton" Style="{StaticResource OperationButtonStyle}" IsEnabled="{Binding CansumButton}"/>
+                <Button Content="-" x:Name="decButton" Style="{StaticResource OperationButtonStyle}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="3" Grid.RowSpan="2">
+                <Button Content="*" x:Name="multiButton" Style="{StaticResource OperationButtonStyle}"/>
+                <Button Content="/" x:Name="divideButton" Style="{StaticResource OperationButtonStyle}"/>
+            </StackPanel>
+
+            <!-- C AND = -->
+            <Button Grid.Row="3" Grid.Column="0"
+                    x:Name="clearAll"
+                    Content="C" Style="{StaticResource NumberButtonStyle}" />
+            <Button Grid.Row="3" Grid.Column="2"
+                    x:Name="delOneLine"
+                    Content="&lt;-" Style="{StaticResource NumberButtonStyle}" />
+            
+        </Grid>
+        
+    </Grid>
+</Window>
