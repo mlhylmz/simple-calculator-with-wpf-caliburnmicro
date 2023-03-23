@@ -1,2 +1,2 @@
-# simple-calculator-with-wpf-and-caliburnmicro
+# Simple Calculator With Wpf and Caliburnmicro
  
